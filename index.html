@@ -3,25 +3,302 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2025 Astrology</title>
+    <title>Asli Astro</title>
     <link rel="icon" type="image/x-icon" href="/images/logo-black.png" />
     <link href="./output.css" rel="stylesheet" />
     <link
       href="https://api.fontshare.com/v2/css?f[]=general-sans@200,201,300,301,400,401,500,501,600,601,700,701,1,2&display=swap"
       rel="stylesheet"
     />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.1/jquery-migrate.min.js"
+      integrity="sha512-KgffulL3mxrOsDicgQWA11O6q6oKeWcV00VxgfJw4TcM8XRQT8Df9EsrYxDf7tpVpfl3qcYD96BpyPvA4d1FDQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Add the slick-theme.css if you want default styling -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
     />
+    <!-- Add the slick-theme.css if you want default styling -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
     />
+
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <!-- font awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <style>
+      /* Testimonials specific styles */
+      .testimonials-slider {
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .testimonials-slider .slide {
+        padding: 0 10px;
+        box-sizing: border-box;
+      }
+
+      .testimonials-slider .slick-list {
+        margin: 0 -10px;
+      }
+
+      .testimonials-slider .slick-track {
+        display: flex !important;
+        align-items: center;
+      }
+
+      /* Dots styling for testimonials */
+      .testimonials-slider .slick-dots {
+        display: none; /* Hide by default */
+        justify-content: center;
+        margin: 1rem 0;
+        padding: 0;
+        list-style-type: none;
+      }
+
+      /* Show dots only on mobile */
+      @media (max-width: 767px) {
+        .testimonials-slider .slick-dots {
+          display: flex;
+          margin: 24px 0 16px 0 !important;
+        }
+        
+        .testimonials-slider .slick-dots li {
+          margin: 0 0.25rem;
+        }
+
+        .testimonials-slider .slick-dots button {
+          display: block;
+          width: 1rem !important;
+          height: 0.5rem !important;
+          padding: 0;
+          border: none;
+          border-radius: 0% !important;
+          background-color: rgba(0, 0, 0, 0.18) !important;
+          text-indent: -9999px;
+        }
+
+        .testimonials-slider .slick-dots li.slick-active button {
+          background-color: #d96200 !important;
+        }
+      }
+
+      /* Navigation arrows */
+      .testimonials-slider .slick-prev,
+      .testimonials-slider .slick-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        width: 40px;
+        height: 40px;
+        background: rgba(0,0,0,0.5);
+        border-radius: 50%;
+        color: white;
+        border: none;
+      }
+
+      .testimonials-slider .slick-prev {
+        left: -25px;
+      }
+
+      .testimonials-slider .slick-next {
+        right: -25px;
+      }
+
+      @media (max-width: 767px) {
+        .testimonials-slider {
+          padding-bottom: 4rem !important;
+        }
+        
+        .testimonials-slider .slick-dots {
+          display: flex;
+          position: relative;
+          bottom: -3rem !important;
+          margin: 0;
+          padding: 0;
+        }
+
+        .testimonials-slider .slide {
+          margin-bottom: 3rem !important;
+        }
+      }
+    </style>
+    <style>
+      body {
+        padding-top: px;
+      }
+
+      .banner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #ff0000;
+        color: white;
+        padding: 4px 0;
+        z-index: 999;
+      }
+
+      .banner-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .timer-section {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .attention-text {
+        font-weight: bold;
+        margin: 0;
+        font-size: 14px;
+      }
+
+      .timer {
+        display: flex;
+        gap: 8px;
+      }
+
+      .circle {
+        background-color: white;
+        color: black;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2px;
+      }
+
+      .circle span {
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1;
+        margin: 0;
+      }
+
+      .circle small {
+        font-size: 9px;
+        margin-top: 1px;
+      }
+
+      .bundle-button {
+        background-color: #00b300;
+        color: white;
+        padding: 6px 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      .bundle-button:hover {
+        background-color: #008000;
+      }
+
+      /* Adjust header positioning */
+      .hero {
+        margin-top: 45px; /* Match the body padding-top */
+      }
+
+      /* Mobile responsiveness */
+      @media (max-width: 768px) {
+        body {
+          padding-top: 1.5px; /* Reduced padding for smaller banner */
+        }
+        
+        .timer-section {
+          flex-direction: column;
+          gap: 6px;
+          padding: 2px;
+        }
+        
+        .attention-text {
+          font-size: 12px; /* Smaller text for mobile */
+          text-align: center;
+        }
+        
+        .circle {
+          width: 35px;
+          height: 35px;
+        }
+        
+        .circle span {
+          font-size: 12px;
+        }
+        
+        .circle small {
+          font-size: 8px;
+        }
+        
+        .bundle-button {
+          padding: 4px 8px;
+          font-size: 12px;
+        }
+        
+        .hero {
+          margin-top: 90px;
+        }
+      }
+    </style>
+    
+  </head>
+  <body class="font-font1 bg-white1 scroll-smooth">
+    <div class="banner">
+      <div class="banner-content">
+        <div class="timer-section">
+          <p class="attention-text">⚡ ATTENTION! PRICE GOES UP AFTER TIMER ENDS!</p>
+          <div class="timer">
+            <div class="circle">
+              <span id="days">00</span>
+              <small>Days</small>
+            </div>
+            <div class="circle">
+              <span id="hours">00</span>
+              <small>Hours</small>
+            </div>
+            <div class="circle">
+              <span id="minutes">00</span>
+              <small>Min</small>
+            </div>
+            <div class="circle">
+              <span id="seconds">00</span>
+              <small>Sec</small>
+            </div>
+          </div>
+          <button class="bundle-button">GET YOUR BUNDLE</button>
+        </div>
+      </div>
+    </div>
     <style>
       .slick-slide {
         outline: none;
@@ -45,7 +322,231 @@
       .slick-next {
         right: -7px;
       }
+      .popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .popup.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .popup-content {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 12px;
+        position: relative;
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transform: translateY(-20px);
+        transition: all 0.3s ease-in-out;
+      }
+
+      .popup.active .popup-content {
+        transform: translateY(0);
+      }
+
+      .popup h2 {
+        color: #f97316; /* orange-500 */
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .popup p {
+        color: #4b5563; /* gray-600 */
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+      }
+
+      .close {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #6b7280; /* gray-500 */
+        transition: color 0.2s;
+      }
+
+      .close:hover {
+        color: #1f2937; /* gray-800 */
+      }
+
+      .join-button {
+        background-color: #f97316; /* orange-500 */
+        color: white;
+        padding: 0.75rem 2rem;
+        border-radius: 9999px;
+        border: none;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .join-button:hover {
+        background-color: #ea580c; /* orange-600 */
+      }
     </style>
+
+
+
+<style>
+  body {
+    padding-top: 0px;
+  }
+
+  .banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ff0000;
+    color: white;
+    padding: 4px 0;
+    z-index: 999;
+  }
+
+  .banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .timer-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .attention-text {
+    font-weight: bold;
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .timer {
+    display: flex;
+    gap: 8px;
+  }
+
+  .circle {
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+  }
+
+  .circle span {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0;
+  }
+
+  .circle small {
+    font-size: 9px;
+    margin-top: 1px;
+  }
+
+  .bundle-button {
+    background-color: #00b300;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .bundle-button:hover {
+    background-color: #008000;
+  }
+
+  /* Adjust header positioning */
+  .hero {
+    margin-top: 45px; /* Match the body padding-top */
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    body {
+      padding-top: 1.5px; /* Reduced padding for smaller banner */
+    }
+    
+    .timer-section {
+      flex-direction: column;
+      gap: 6px;
+      padding: 2px;
+    }
+    
+    .attention-text {
+      font-size: 12px; /* Smaller text for mobile */
+      text-align: center;
+    }
+    
+    .circle {
+      width: 35px;
+      height: 35px;
+    }
+    
+    .circle span {
+      font-size: 12px;
+    }
+    
+    .circle small {
+      font-size: 8px;
+    }
+    
+    .bundle-button {
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+    
+    .hero {
+      margin-top: 90px;
+    }
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   </head>
   <body class="bg-white1">
@@ -102,7 +603,7 @@
         </header>
         <div
           id="burger-menu"
-          class="absolute top-0 left-0 w-4/6 h-screen bg-black1 hidden"
+          class="fixed left-0 w-4/6 h-screen bg-black1 hidden"
         >
           <div
             class="flex items-center justify-start gap-4 text-white p-4 mt-4"
@@ -572,6 +1073,143 @@
       </div>
     </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section
+    style="background-image: url('./images/bundlebg.png')"
+    class="bundle w-screen max-w-full h-screen md:h-max pt-[5rem] md:pt-[1rem] md:pb-[8rem] md:mt-20 md:mb-8 bg-cover bg-center bg-no-repeat relative"
+  >
+    <div class="w-[40%] md:w-[90%] md:mx-auto ml-[8rem] relative z-10">
+      <h2
+        class="text-xl flex gap-4 items-center justify-start md:justify-center my-4 font-medium text-orange-600"
+      >
+        <img src="./images/star-sign.svg" alt="" />
+        Limited Offer
+      </h2>
+      <h3 class="block text-4xl my-2 font-semibold md:text-center md:hidden">
+        Unlock our Saving Bundle.
+      </h3>
+      <h3 class="block text-4xl my-2 font-semibold text-red1 md:hidden">
+        Save ₹7,100
+      </h3>
+      <h3 class="hidden text-center text-4xl my-2 font-semibold md:block">
+        Unlock our Savings Bundle. <span class="text-red1">Save ₹7,100</span>
+      </h3>
+      <p class="my-4 text-2xl md:text-center">
+        First ever all-inclusive Astro Report to get a head. start in
+        connecting with yourself like never before. Not just a one-time read,
+        but a guide you can refer to at different stages of life.
+      </p>
+      <button
+        class="mr-auto md:mx-auto md:mt-[7rem] flex items-center justify-center mt-8 shadow-btnShadow2 gap-2 bg-orange-600 text-white px-8 py-3 rounded-2xl"
+      >
+        Preview The Bundle Now <img src="./images/right-arrow.svg" alt="" />
+      </button>
+      <p class="block md:hidden text-2xl mt-4">Includes:</p>
+      <div class="grid md:hidden gap-4 grid-cols-2">
+        <p class="flex text-orange-600 items-center justify-start gap-3">
+          <img src="./images/om.png" alt="" />
+          Kundali and Divisional Birth Charts
+        </p>
+        <p class="flex text-orange-600 items-center justify-start gap-3">
+          <img src="./images/om.png" alt="" />
+          Health and Wellness
+        </p>
+        <p class="flex text-orange-600 items-center justify-start gap-3">
+          <img src="./images/om.png" alt="" />
+          Horoscope Analysis
+        </p>
+        <p class="flex text-orange-600 items-center justify-start gap-3">
+          <img src="./images/om.png" alt="" />
+          Professional Interest
+        </p>
+        <p class="flex text-orange-600 items-center justify-start gap-3">
+          <img src="./images/om.png" alt="" />
+          Your Personality and Unique Qualities
+        </p>
+        <p class="flex text-orange-600 items-center justify-start gap-3">
+          <img src="./images/om.png" alt="" />
+          Lucky Colors and Gemstones
+        </p>
+      </div>
+    </div>
+  </section>     
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <section class="bg-[#FFF9F0] py-16 min-h-[100vh] px-[10%] md:px-4">
       <h2 class="text-4xl text-orange-600 mb-6 font-bold">
         This report includes:
@@ -747,8 +1385,8 @@
       </div>
       <div class="flex md:hidden flex-row justify-between mt-4 w-2/5">
         <div class="w-1/5 flex items-start gap-2 flex-col justify-start">
-          <h2 class="text-white1 mb-4">Product</h2>
-          <a href="/Products.html" class="text-gray-400"> Services</a>
+          <!-- <h2 class="text-white1 mb-4">Product</h2>
+          <a href="/Products.html" class="text-gray-400"> Services</a> -->
         </div>
         <div class="w-1/5 flex items-start gap-2 flex-col justify-start">
           <h2 class="text-white1 mb-4">Company</h2>
@@ -769,8 +1407,8 @@
         <img src="./images/AsliAstro.png" class="" alt="" />
         <div class="flex flex-row justify-between mt-8 w-full">
           <div class="w-1/3 flex items-start gap-2 flex-col justify-start">
-            <h2 class="text-white1 mb-4">Product</h2>
-            <a href="./Products.html" class="text-gray-400"> Services</a>
+            <!-- <h2 class="text-white1 mb-4">Product</h2>
+            <a href="./Products.html" class="text-gray-400"> Services</a> -->
           </div>
           <div class="w-1/3 flex items-start gap-2 flex-col justify-start">
             <h2 class="text-white1 mb-4">Company</h2>
@@ -1110,6 +1748,162 @@
           $("#tab_desc").removeClass("border-b-2").addClass("border-b-0");
           $("#tab_faq").removeClass("border-b-2").addClass("border-b-0");
       }
+   
+
     </script>
-  </body>
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span id="close-popup" class="close">&times;</span>
+        <h2>Wait! We have a confession.</h2>
+        <p>You can join our WhatsApp group for free daily horoscope guidance.</p>
+        <button id="join-button" class="join-button">Join now</button>
+      </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const popup = document.getElementById('popup');
+        const closePopup = document.getElementById('close-popup');
+        const joinButton = document.getElementById('join-button');
+        let hasShownPopup = false;
+
+        // Function to show popup
+        function showPopup() {
+            if (!hasShownPopup) {
+                popup.classList.add('active');
+                hasShownPopup = true;
+            }
+        }
+
+        // Function to hide popup
+        function hidePopup() {
+            popup.classList.remove('active');
+        }
+
+        // Show popup after 15 seconds
+        setTimeout(showPopup, 15000);
+
+        // Close popup when clicking the close button
+        closePopup.addEventListener('click', hidePopup);
+
+        // Close popup when clicking outside
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                hidePopup();
+            }
+        });
+
+        // Handle join button click
+        joinButton.addEventListener('click', function() {
+            // Replace this URL with your WhatsApp group invite link
+            window.open('https://chat.whatsapp.com/your-group-invite-link', '_blank');
+            hidePopup();
+        });
+
+        // Prevent popup from showing again if user closes tab/browser
+        window.addEventListener('beforeunload', function() {
+            localStorage.setItem('popupShown', 'true');
+        });
+    });
+
+    </script>
+
+
+<script>
+  // Set the date we're counting down to (24 hours from now)
+  const countDownDate = new Date("Jan 25, 2025 15:37:25").getTime();
+
+  // Update the countdown every 1 second
+  const x = setInterval(function() {
+      // Get today's date and time
+      const now = new Date().getTime();
+      
+      // Find the distance between now and the countdown date
+      const distance = countDownDate - now;
+      
+      // Time calculations for days, hours, minutes and seconds
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      // Display the results
+      document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+      document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+      document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+      document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+      
+      // If the countdown is finished, write some text
+      if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("days").innerHTML = "00";
+          document.getElementById("hours").innerHTML = "00";
+          document.getElementById("minutes").innerHTML = "00";
+          document.getElementById("seconds").innerHTML = "00";
+      }
+  }, 1000);
+  </script>
+  <style>
+    /* Sidebar styles */
+    #burger-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 66.666667%;
+      height: 100vh;
+      background-color: #000;
+      z-index: 1001;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+
+    /* Show the sidebar when active */
+    #burger-menu.active {
+      transform: translateX(0);
+    }
+
+    /* Hide the menu button when the sidebar is active */
+    #burger-menu-btn {
+      position: relative;
+      z-index: 1002;
+      cursor: pointer;
+    }
+
+    #burger-menu.active + #burger-menu-btn {
+      display: none; /* Hide the menu button */
+    }
+
+    /* Close button */
+    #burger-menu_close_btn {
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      z-index: 1002;
+    }
+
+    /* Other styles remain unchanged */
+  </style>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const burgerBtn = document.getElementById('burger-menu-btn');
+      const closeBtn = document.getElementById('burger-menu_close_btn');
+      const menu = document.getElementById('burger-menu');
+
+      burgerBtn.addEventListener('click', function() {
+          menu.classList.add('active');
+          burgerBtn.style.display = 'none'; // Hide the menu button
+      });
+
+      closeBtn.addEventListener('click', function() {
+          menu.classList.remove('active');
+          burgerBtn.style.display = 'block'; // Show the menu button
+      });
+  });
+  </script>
+</body>
 </html>
+
+
+
+
+
+
